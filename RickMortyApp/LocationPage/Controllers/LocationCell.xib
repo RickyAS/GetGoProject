@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="87" id="KGk-i7-Jjw" customClass="LocationCell" customModule="RickMortyApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgc-Wy-HrK">
+                        <rect key="frame" x="12" y="6" width="296" height="75"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Wk5-CT-N1C">
+                                <rect key="frame" x="12" y="12.000000000000004" width="142" height="49.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth (D-99)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="awV-vu-VwH">
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="planet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRC-6r-hhT">
+                                        <rect key="frame" x="0.0" y="32.333333333333336" width="142" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="RVD-Ca-PlN">
+                                <rect key="frame" x="160" y="18.666666666666671" width="124" height="38"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dimension:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0D3-YT-MZh">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dimension D-99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGk-ar-VEt">
+                                        <rect key="frame" x="0.0" y="20.999999999999996" width="124" height="17.000000000000004"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RVD-Ca-PlN" firstAttribute="centerY" secondItem="bgc-Wy-HrK" secondAttribute="centerY" id="7K4-D4-5hu"/>
+                            <constraint firstItem="Wk5-CT-N1C" firstAttribute="leading" secondItem="bgc-Wy-HrK" secondAttribute="leading" constant="12" id="HjJ-9v-OBB"/>
+                            <constraint firstItem="Wk5-CT-N1C" firstAttribute="width" secondItem="bgc-Wy-HrK" secondAttribute="width" multiplier="0.48" id="IEc-Tg-czQ"/>
+                            <constraint firstItem="RVD-Ca-PlN" firstAttribute="leading" secondItem="Wk5-CT-N1C" secondAttribute="trailing" constant="6" id="SUe-Mw-Zgd"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Wk5-CT-N1C" secondAttribute="bottom" constant="12" id="jKC-WH-Vo4"/>
+                            <constraint firstAttribute="trailing" secondItem="RVD-Ca-PlN" secondAttribute="trailing" constant="12" id="oLY-3m-SiY"/>
+                            <constraint firstItem="Wk5-CT-N1C" firstAttribute="top" secondItem="bgc-Wy-HrK" secondAttribute="top" constant="12" id="rsR-GZ-6et"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" systemColor="labelColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bgc-Wy-HrK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="KyH-Lv-EQp"/>
+                    <constraint firstAttribute="trailing" secondItem="bgc-Wy-HrK" secondAttribute="trailing" constant="12" id="Pz5-AF-bny"/>
+                    <constraint firstAttribute="bottom" secondItem="bgc-Wy-HrK" secondAttribute="bottom" constant="6" id="aLY-Uw-ajb"/>
+                    <constraint firstItem="bgc-Wy-HrK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="cjJ-g2-XCi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="accessId" value="locationCell"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="lblDimension" destination="cGk-ar-VEt" id="Ocw-oe-Rsh"/>
+                <outlet property="lblName" destination="awV-vu-VwH" id="Tod-pI-hZn"/>
+                <outlet property="lblType" destination="lRC-6r-hhT" id="lJU-EV-8AO"/>
+            </connections>
+            <point key="canvasLocation" x="4.5801526717557248" y="35.563380281690144"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
