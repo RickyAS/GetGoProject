@@ -13,7 +13,7 @@ class LocationCell: UITableViewCell {
     @IBOutlet weak var lblDimension: UILabel!
     
     /// Set cell values by specified model
-    /// - Parameter item: LocationModel
+    /// - Parameter item: Location Model
     func setupValues(item: LocationModel) {
         lblName.text = item.name
         lblType.text = item.type

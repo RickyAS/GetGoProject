@@ -7,13 +7,14 @@
 
 import Foundation
 import UIKit
-
+// MARK: - Coordinator Protocol
 protocol EpisodeCoordinatorDelegate: AnyObject{
     /// Present Episode Detail Page
     /// - Parameter id: Episode id
     func openDetail(id: Int)
 }
 
+// MARK: - Coordinator
 class EpisodeCoordinator: Coordinator, EpisodeCoordinatorDelegate {
     let navigation: UINavigationController
     var childs: [Coordinator] = []

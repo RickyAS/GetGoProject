@@ -6,13 +6,18 @@
 //
 
 import Foundation
-
+// MARK: - View Model Protocol
 protocol CharacterDetailViewModelProtocol {
+    /// Model for the first table cell
     var character: CharacterModel? { get set }
+    /// List to populate section 2 table data
     var episodeList: [String] { get set }
+    /// Fetch character API
+    /// - Parameter completion: get error message from API
     func getCharacter(completion: @escaping (String?) -> Void)
 }
 
+// MARK: - View Model
 class CharacterDetailViewModel: CharacterDetailViewModelProtocol {
     let service: MainServiceProtocol
     let id: Int
@@ -25,6 +30,7 @@ class CharacterDetailViewModel: CharacterDetailViewModelProtocol {
     var episodeList: [String] = []
     
     func getCharacter(completion: @escaping (String?) -> Void) {
+        // get data from API
         service.getCharacterDetail(id: id) { [unowned self] result in
             switch result {
             case .success(let model):

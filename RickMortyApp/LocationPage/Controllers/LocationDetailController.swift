@@ -6,6 +6,7 @@
 //
 
 import UIKit
+// MARK: - Main Controller
 class LocationDetailController: BaseViewController {
     private let viewModel: LocationDetailViewModelProtocol
     
@@ -29,6 +30,7 @@ class LocationDetailController: BaseViewController {
         getLocation()
     }
     
+    /// Get location data from view model
     private func getLocation() {
         viewModel.getLocation { [unowned self] errMsg in
             dismissLoader()
@@ -41,6 +43,7 @@ class LocationDetailController: BaseViewController {
     }
 }
 
+// MARK: - Table View
 extension LocationDetailController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         2
@@ -71,6 +74,8 @@ extension LocationDetailController: UITableViewDataSource, UITableViewDelegate {
             }
             return cell ?? UITableViewCell()
         }
+        
+        // display reference list in default cell
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
         var content = cell.defaultContentConfiguration()
         content.text = viewModel.residentList[indexPath.row]

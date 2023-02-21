@@ -7,7 +7,8 @@
 
 import Foundation
 import UIKit
-
+import BottomHalfModal
+// MARK: - Coordinator Protocol
 protocol CharacterCoordinatorDelegate: AnyObject{
     /// Push to Character Detail Page
     /// - Parameter id: Character id
@@ -16,17 +17,16 @@ protocol CharacterCoordinatorDelegate: AnyObject{
     ///  - Parameter completion: selected filter from `CharacterFilterModel`
     ///  - Parameter collections: tuple for status, species, gender
     func openFilter(filter: CharacterFilterModel, collections: ([CharacterStatus], [CharacterSpecies], [CharacterGender]))
-
     /// Dismiss to apply filter
     /// - Parameter status: selected status
     /// - Parameter species: selected species
     /// - Parameter gender: selected gender
     func closeFilter(status: String, species: String, gender: String)
-    
     /// Get applied filter
     var getFiltered: ((CharacterFilterModel) -> Void)? { get set }
 }
 
+//MARK: - Coordinator
 class CharacterCoordinator: Coordinator, CharacterCoordinatorDelegate {
     let navigation: UINavigationController
     var childs: [Coordinator] = []
@@ -56,7 +56,7 @@ class CharacterCoordinator: Coordinator, CharacterCoordinatorDelegate {
     
     func openFilter(filter: CharacterFilterModel, collections: ([CharacterStatus], [CharacterSpecies], [CharacterGender])) {
         let vc = CharacterFilterController(filter: filter, collections: collections, coordinator: self)
-        navigation.viewControllers.last?.present(vc, animated: true)
+        navigation.viewControllers.last?.presentBottomHalfModal(vc, animated: true, completion: nil)
     }
     
     func closeFilter(status: String, species: String, gender: String) {

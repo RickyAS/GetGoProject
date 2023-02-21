@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// MARK: - Main Controller
 class CharacterDetailController: BaseViewController {
     private let viewModel: CharacterDetailViewModelProtocol
     init(viewModel: CharacterDetailViewModelProtocol) {
@@ -17,7 +17,6 @@ class CharacterDetailController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     private let cellId = "CharacterDetailCell"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +29,7 @@ class CharacterDetailController: BaseViewController {
         getCharacter()
     }
 
+    /// Get character data from view model
     private func getCharacter() {
         viewModel.getCharacter { [unowned self] errMsg in
             dismissLoader()
@@ -42,6 +42,7 @@ class CharacterDetailController: BaseViewController {
     }
 }
 
+// MARK: - Table View
 extension CharacterDetailController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         2
@@ -72,6 +73,8 @@ extension CharacterDetailController: UITableViewDataSource, UITableViewDelegate 
             }
             return cell ?? UITableViewCell()
         }
+        
+        // display reference list in default cell
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
         var content = cell.defaultContentConfiguration()
         content.text = viewModel.episodeList[indexPath.row]

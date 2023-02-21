@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Main Episode Model
 struct EpisodeModel: Decodable{
     let id: Int
     let name: String

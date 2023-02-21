@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// MARK: - Base Model Decodable
 struct BaseResponse<T:Decodable>: Decodable{
     let info: InfoModel
     let results: T
@@ -17,6 +17,7 @@ struct BaseResponse<T:Decodable>: Decodable{
     }
 }
 
+// MARK: - Main Location Model
 struct LocationModel: Decodable{
     let id: Int
     let name: String

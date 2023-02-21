@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterDetailCell: UITableViewCell {
     @IBOutlet weak var imgProfile: UIImageView!
@@ -20,8 +21,13 @@ class CharacterDetailCell: UITableViewCell {
     @IBOutlet weak var lblLocation: UILabel!
     
     /// Set cell values by specified model
-    /// - Parameter item: CharacterModel
+    /// - Parameter item: Character Model
     func setupValues(item: CharacterModel) {
+        // Apply web image
+        if let imgUrl = URL(string: item.image) {
+            imgProfile.sd_setImage(with: imgUrl, completed: nil)
+        }
+        
         // apply status label and icon
         lblStatus.text = "Status: " + item.status
         let status = CharacterStatus(rawValue: item.status.lowercased()) ?? .unknown

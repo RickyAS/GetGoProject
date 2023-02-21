@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: - Main Controller
 class CharacterController: BaseViewController {
     private var viewModel: CharacterViewModelProtocol
     unowned let coordinator: CharacterCoordinatorDelegate
@@ -31,6 +31,7 @@ class CharacterController: BaseViewController {
         getCharacters(isReload: true)
     }
     
+    /// Get character list from view model
     func getCharacters(isReload: Bool) {
         viewModel.getCharacters(isReload: isReload) { [unowned self] errMsg in
             dismissLoader()
@@ -51,13 +52,14 @@ class CharacterController: BaseViewController {
     }
 }
 
+// MARK: - Collection View
 extension CharacterController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.charList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width/2) - 18, height: collectionView.frame.width * 0.65)
+        return CGSize(width: (collectionView.frame.width/2) - 18, height: collectionView.frame.width * 0.62)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -82,8 +84,8 @@ extension CharacterController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
+// MARK: - Search Bar
 extension CharacterController: UISearchBarDelegate {
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchText = searchBar.text ?? ""
         getCharacters(isReload: true)

@@ -21,8 +21,12 @@ class CharacterFilterCell: UICollectionViewCell {
     /// - Parameter isSelected: set cell state when being pressed
     func setupValues(name: String, isSelected: Bool) {
         lblName.text = name.isEmpty ? "All" : name.capitalized
+        
+        // set colors when cell is selected
         lblName.textColor = isSelected ? .systemBlue : .systemGray
         lblName.superview?.layer.borderColor = isSelected ? UIColor.systemBlue.cgColor : UIColor.systemGray.cgColor
+        
+        // set cell's width based on text's width
         cellWidth.constant = lblName.intrinsicContentSize.width + 32
     }
 }

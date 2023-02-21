@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+// MARK: - Main Coordinator
 protocol Coordinator {
     /// Init parent navigation controller
     var navigation: UINavigationController { get }
@@ -17,6 +17,7 @@ protocol Coordinator {
     func start()
 }
 
+// MARK: - Tab Bar
 class TabCoordinator: Coordinator {
     let navigation: UINavigationController
     var childs: [Coordinator] = []

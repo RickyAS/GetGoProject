@@ -14,7 +14,7 @@ class EpisodeCell: UITableViewCell {
     @IBOutlet weak var lblAirDate: UILabel!
     
     /// Set cell values by specified model
-    /// - Parameter item: EpisodeModel
+    /// - Parameter item: Episode Model
     func setupValues(item: EpisodeModel) {
         // Split string to get season and episode for labels
         let episode = item.episode.replacingOccurrences(of: "[A-Z]", with: " ", options: .regularExpression)

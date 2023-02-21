@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// MARK: - Main Controller
 class EpisodeDetailController: BaseViewController {
     private let viewModel: EpisodeDetailViewModelProtocol
     unowned let coordinator: EpisodeCoordinator
@@ -32,6 +32,7 @@ class EpisodeDetailController: BaseViewController {
         getEpisode()
     }
     
+    /// Get episode data from view model
     private func getEpisode() {
         viewModel.getEpisode { [unowned self] errMsg in
             dismissLoader()
@@ -44,6 +45,7 @@ class EpisodeDetailController: BaseViewController {
     }
 }
 
+// MARK: - Table View
 extension EpisodeDetailController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         2

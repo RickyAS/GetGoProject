@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: - Main Controller
 class LocationController: BaseViewController {
     private var viewModel: LocationViewModelProtocol
     private let coordinator: LocationCoordinator
@@ -30,6 +30,7 @@ class LocationController: BaseViewController {
         getLocations(isReload: true)
     }
     
+    /// Get location list from view model
     private func getLocations(isReload: Bool) {
         viewModel.getLocations(isReload: isReload) { [unowned self] errMsg in
             dismissLoader()
@@ -41,6 +42,7 @@ class LocationController: BaseViewController {
     }
 }
 
+// MARK: - Table View
 extension LocationController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.locationList.count
@@ -64,6 +66,7 @@ extension LocationController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+// MARK: - Search Bar
 extension LocationController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchText = searchBar.text ?? ""

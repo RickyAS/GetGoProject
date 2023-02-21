@@ -7,13 +7,14 @@
 
 import Foundation
 import UIKit
-
+// MARK: - Coordinator Protocol
 protocol LocationCoordinatorDelegate: AnyObject{
     /// Present Location Detail Page
     /// - Parameter id: Location id
     func openDetail(id: Int)
 }
 
+// MARK: - Coordinator
 class LocationCoordinator: Coordinator, LocationCoordinatorDelegate {
     let navigation: UINavigationController
     var childs: [Coordinator] = []

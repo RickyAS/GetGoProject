@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//MARK: - Main Character Model
 struct CharacterModel: Decodable{
     let id: Int
     let name: String
@@ -44,7 +44,7 @@ struct CharacterFilterModel {
     }
 }
 
-
+// MARK: - Status
 enum CharacterStatus: String {
     case alive, dead, unknown
     
@@ -57,12 +57,14 @@ enum CharacterStatus: String {
     }
 }
 
+// MARK: - Species
 enum CharacterSpecies: String {
     case human, humanoid, alien, poopybutthole, cronenberg
     case mythological = "mythological creature"
     case animal, robot, disease, unknown
 }
 
+// MARK: - Gender
 enum CharacterGender: String {
     case male, female, genderless, unknown
     

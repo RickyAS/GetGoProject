@@ -23,7 +23,7 @@ final class EpisodeUITest: XCTestCase {
         start()
         let firstCell =  app.tables["mainTable"].cells.firstMatch
         XCTAssertTrue(firstCell.waitForExistence(timeout: 5))
-        let cell = app.tables["mainTable"].staticTexts["Forgetting Sarick Mortshall"]
+        let cell = app.tables["mainTable"].staticTexts["Mort Dinner Rick Andre"]
         while !cell.exists {
             app.swipeUp(velocity: .fast)
         }

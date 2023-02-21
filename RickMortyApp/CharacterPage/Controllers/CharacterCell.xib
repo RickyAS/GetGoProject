@@ -20,12 +20,17 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7j-a1-an5">
                         <rect key="frame" x="0.0" y="0.0" width="210" height="281"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y21-U9-cSI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y21-U9-cSI">
                                 <rect key="frame" x="0.0" y="0.0" width="210" height="203"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="203" id="eWL-n2-Pw8"/>
                                     <constraint firstAttribute="width" secondItem="y21-U9-cSI" secondAttribute="height" multiplier="30:29" id="iAV-qh-zB3"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kV3-V5-gtl">
                                 <rect key="frame" x="12" y="215" width="186" height="45.333333333333314"/>

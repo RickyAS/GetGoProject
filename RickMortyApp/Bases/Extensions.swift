@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+// MARK: - Image
 extension UIImage {
     /// Modify `UIImage` size
     ///  - Parameter size: width & height of preferred `UIImage`
@@ -22,6 +22,7 @@ extension UIImage {
     }
 }
 
+// MARK: - View
 extension UIView {
     /// Style for view corner radius in the `Inspectors`
     @IBInspectable
@@ -63,6 +64,7 @@ extension UIView {
         }
     }
     
+    /// Set element id for UITest
     @IBInspectable
     var accessId: String? {
         get {
@@ -75,6 +77,7 @@ extension UIView {
     }
 }
 
+// MARK: - Text
 extension String {
     /// Convert string by specified date format to another format
     ///  - Parameter from: initial date format , such `"yyyy-MM-dd"`

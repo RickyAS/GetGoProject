@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: - Main Controller
 class EpisodeController: BaseViewController {
     private var viewModel: EpisodeViewModelProtocol
     private let coordinator: EpisodeCoordinator
@@ -30,6 +30,7 @@ class EpisodeController: BaseViewController {
         getEpisodes(isReload: true)
     }
     
+    /// Get episode list from view model
     private func getEpisodes(isReload: Bool) {
         viewModel.getEpisodes(isReload: isReload) { [unowned self] errMsg in
             dismissLoader()
@@ -42,6 +43,7 @@ class EpisodeController: BaseViewController {
 
 }
 
+// MARK: - Table View
 extension EpisodeController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.episodeList.count
@@ -64,7 +66,8 @@ extension EpisodeController: UITableViewDataSource, UITableViewDelegate {
         coordinator.openDetail(id: item.id)
     }
 }
-    
+
+// MARK: - Search Bar
 extension EpisodeController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchText = searchBar.text ?? ""

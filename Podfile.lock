@@ -1,0 +1,22 @@
+PODS:
+  - BottomHalfModal (1.1.1)
+  - SDWebImage (5.15.3):
+    - SDWebImage/Core (= 5.15.3)
+  - SDWebImage/Core (5.15.3)
+
+DEPENDENCIES:
+  - BottomHalfModal
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - BottomHalfModal
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  BottomHalfModal: eb45e44ee80345e50da8c51667ff9170545a560b
+  SDWebImage: 302d4e14efff86b36b5f36d1bf891b635436d071
+
+PODFILE CHECKSUM: ea1d6c90d1a8bc3872e6a099aed58df2e3713041
+
+COCOAPODS: 1.11.3

@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
-class CharacterFilterController: UIViewController {
+import BottomHalfModal
+// MARK: - Main Controller
+class CharacterFilterController: UIViewController, SheetContentHeightModifiable {
+    var sheetContentHeightToModify: CGFloat = 500
     @IBOutlet weak var colStatus: UICollectionView!
     @IBOutlet weak var colSpecies: UICollectionView!
     @IBOutlet weak var colGender: UICollectionView!
@@ -46,6 +48,12 @@ class CharacterFilterController: UIViewController {
         setupCollections()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        adjustFrameToSheetContentHeightIfNeeded()
+    }
+    
+    /// Setup some collections with different flow layouts
     private func setupCollections() {
         [colStatus, colSpecies, colGender].forEach({
             let nib = UINib(nibName: cellId, bundle: nil)
@@ -77,6 +85,7 @@ class CharacterFilterController: UIViewController {
     }
 }
 
+// MARK: - Collection View
 extension CharacterFilterController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
