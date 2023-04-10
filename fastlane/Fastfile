@@ -20,11 +20,11 @@ platform :ios do
     setup_circle_ci
   end
   lane :test do
-    scan(scheme: "RickMortyAppTests", 
-       clean: true, 
-       code_coverage: true, 
-       devices: ["iPhone 14"],
-       fail_build: true,
-       xcargs: "-allowProvisioningUpdates")
+    scan(workspace: "RickMortyApp.xcworkspace",
+         scheme: "RickMortyApp",
+         clean: true,
+         only_testing: "RickMortyApp/RickMortyAppTests",
+         xcargs: "-configuration Debug",
+         destination: "platform=iOS Simulator,OS=16.2,name=iPhone 14")
   end
 end
