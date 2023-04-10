@@ -18,7 +18,7 @@ jobs:
           command: pod install
       - run:
           name: Build and Run test
-          command: fastlane scan
+          command: fastlane ios_test
           environment:
             SCAN_DEVICE: iPhone 14
             SCAN_SCHEME: RickMortyApp
