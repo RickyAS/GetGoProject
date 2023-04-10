@@ -9,6 +9,9 @@ jobs:
       FASTLANE_LANE: test
     steps:
       - checkout
+      - run:
+            name: Set Ruby Version
+            command: rbenv global 3.1.4 && rbenv rehash
       - run: bundle install
       - run:
           name: Fastlane
@@ -27,7 +30,28 @@ jobs:
       - store_test_results:
           path: output/scan
 
+  adhoc:
+    macos:
+      xcode: 14.2.0
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: adhoc
+    steps:
+      - checkout
+      - run: bundle install
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+
 workflows:
-  build-test:
+  build-test-adhoc:
     jobs:
       - build-and-test
+      - adhoc:
+          filters:
+            branches:
+              only: development
+          requires:
+            - build-and-test
