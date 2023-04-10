@@ -23,7 +23,7 @@ platform :ios do
     scan(scheme: "RickMortyAppTests", 
        clean: true, 
        code_coverage: true, 
-       devices: ["iPhone 11 Pro Max"],
+       devices: ["iPhone 14"],
        fail_build: true,
        xcargs: "-allowProvisioningUpdates")
   end
