@@ -20,6 +20,11 @@ platform :ios do
     setup_circle_ci
   end
   lane :test do
-    scan
+    scan(scheme: "RickMortyAppTests", 
+       clean: true, 
+       code_coverage: true, 
+       devices: ["iPhone 11 Pro Max"],
+       fail_build: true,
+       xcargs: "-allowProvisioningUpdates")
   end
 end

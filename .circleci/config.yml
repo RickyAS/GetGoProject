@@ -19,9 +19,6 @@ jobs:
       - run:
           name: Build and Run test
           command: fastlane test
-          environment:
-            SCAN_DEVICE: iPhone 14
-            SCAN_SCHEME: RickMortyApp
       - store_artifacts:
           path: output
       - store_test_results:
